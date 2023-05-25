@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      .textbox-container {
+        position: relative;
+        display: inline-block;
+      }
+
+      .textbox {
+        padding-right: 25px;
+        border: none;
+        border-bottom: 2px solid #ccc;
+        font-size: 16px;
+      }
+
+      .textbox:focus {
+        outline: none;
+        border-bottom-color: #000;
+      }
+
+      .eye-icon {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #000;
+      }
+
+      .eye-icon.disabled:before {
+        content: "\f070";
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="textbox-container">
+      <input type="text" class="textbox" placeholder="Enter text" />
+      <i class="eye-icon fas fa-eye"></i>
+    </div>
+
+    <script>
+      const textbox = document.querySelector(".textbox");
+      const eyeIcon = document.querySelector(".eye-icon");
+
+      eyeIcon.addEventListener("click", function () {
+        if (textbox.type === "password") {
+          textbox.type = "text";
+          eyeIcon.classList.remove("disabled");
+        } else {
+          textbox.type = "password";
+          eyeIcon.classList.add("disabled");
+        }
+      });
+    </script>
+  </body>
+</html>

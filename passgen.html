@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Input Form</title>
+    <script src="seedrandom.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form>
+      <label for="text-input">Input String :</label>
+      <div class="input-container">
+        <input type="text" id="text-input" placeholder="Enter text" />
+        <button
+          type="button"
+          id="eye-button"
+          onclick="applyBlurEffect('text-input')"
+        >
+          <i class="eye-icon fas fa-eye"></i>
+        </button>
+      </div>
+      <label for="number-input1">Stretching Count :</label>
+      <input type="number" id="number-input1" value="101" />
+      <label for="number-input2">Cut Length :</label>
+      <input type="number" id="number-input2" min="1" max="64" value="20" />
+    </form>
+    <div class="output-window">
+      <div>Generated password:</div>
+      <div class="blurred" id="output-window"></div>
+      <button id="eye-button" onclick="applyBlurEffect('output-window')">
+        <i class="eye-icon fas fa-eye"></i>
+      </button>
+    </div>
+    <button onclick="copyHashToClipboard()">Copy to Clipboard</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 500px;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; ラベルを左端に配置 */
+}
+
+label {
+}
+
+input {
+  width: 400px;
+  height: 50px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 10px;
+  width: 200px;
+}
+
+#output-window {
+  height: 25px;
+}
+
+.blurred {
+  filter: blur(5px);
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  display: inline-block;
+}
+
+#text-input {
+  flex-grow: 1;
+}
+
+#eye-button {
+  margin-left: 5px;
+}
+
+.input_button {
+  position: absolute;
+  right: 0px;
+  top: 0;
+  margin: 0px;
+  width: 50px;
+  height: 50px;
+}
+
+.output-window {
+  position: relative;
+  display: inline-block;
+  width: 400px;
+  margin: 0 auto;
+  border-bottom: 1px solid #585858;
+}
+
+.output_button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0px;
+  width: 50px;
+  height: 50px;
+}
+
+.output-window > #output-window {
+  height: 50px;
+  line-height: 50px;
+}
+
+#eye-button {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ---- */
+
+.textbox-container {
+  position: relative;
+  display: inline-block;
+}
+
+.textbox {
+  padding-right: 25px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-size: 16px;
+}
+
+.textbox:focus {
+  outline: none;
+  border-bottom-color: #000;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #000;
+}
+
+.eye-icon.disabled:before {
+  content: "\f070";
+  text-decoration: line-through;
+}
